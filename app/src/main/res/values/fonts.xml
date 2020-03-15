@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ubuntu_bold">fonts/Ubuntu-Bold.ttf</string>
+    <string name="ubuntu_bold_italic">fonts/Ubuntu-BoldItalic.ttf</string>
+    <string name="ubuntu_italic">fonts/Ubuntu-Italic.ttf</string>
+    <string name="ubuntu_light">fonts/Ubuntu-Light.ttf</string>
+    <string name="ubuntu_light_italic">fonts/Ubuntu-LightItalic.ttf</string>
+    <string name="ubuntu_medium">fonts/Ubuntu-Medium.ttf</string>
+    <string name="ubuntu_medium_italic">fonts/Ubuntu-MediumItalic.ttf</string>
+    <string name="ubuntu_regular">fonts/Ubuntu-Regular.ttf</string>
+</resources>
