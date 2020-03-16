@@ -1,6 +1,7 @@
 package com.denofdevelopers.myvibes.application
 
 import android.app.Application
+import com.denofdevelopers.android.projectone_kotlin.di.modules.AppModule
 import com.denofdevelopers.myvibes.BuildConfig
 import com.denofdevelopers.myvibes.R
 import com.devs.acr.AutoErrorReporter
@@ -11,11 +12,19 @@ import timber.log.Timber
 
 class App : Application() {
 
+    private var appComponent: AppComponent? = null
+
+    companion object {
+        lateinit var instance: App private set;
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this;
         initTimber()
         initCrashLibrary()
         initCalligraphyConfig()
+        initAppComponent()
     }
 
     private fun initTimber() {
@@ -46,5 +55,12 @@ class App : Application() {
                 )
                 .build()
         )
+    }
+
+    private fun initAppComponent() {
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build();
+        appComponent!!.plus(this);
     }
 }
